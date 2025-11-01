@@ -5,6 +5,7 @@ from app.models.order import Order, OrderItem
 from app.models.cart import Cart
 from app.models.product import Product
 import uuid
+from sqlalchemy.orm import joinedload
 
 order_bp = Blueprint("orders", __name__)
 
@@ -21,13 +22,6 @@ def place_order():
             flash("Your cart is empty!", "warning")
             return redirect(url_for('cart.get_cart'))
 
-        # Check stock availability
-        for item in cart_items:
-            if item.quantity > item.product.stock_quantity:
-                flash(
-                    f"Not enough stock for {item.product.name}! Only {item.product.stock_quantity} available.", "danger")
-                return redirect(url_for('cart.get_cart'))
-
         total_amount = sum(item.product.price *
                            item.quantity for item in cart_items)
         order_number = str(uuid.uuid4())[:8].upper()
@@ -38,13 +32,11 @@ def place_order():
             total_amount=total_amount,
             shipping_address=shipping_address,
             payment_method=payment_method,
-            payment_status="paid",
-            status="confirmed"
+            payment_status="pending"
         )
         db.session.add(new_order)
         db.session.commit()
 
-        # Create order items and update stock
         for item in cart_items:
             order_item = OrderItem(
                 order_id=new_order.id,
@@ -55,11 +47,8 @@ def place_order():
             )
             db.session.add(order_item)
 
-            # Update product stock
             product = Product.query.get(item.product_id)
             product.stock_quantity -= item.quantity
-
-            # Remove from cart
             db.session.delete(item)
 
         db.session.commit()
@@ -86,6 +75,9 @@ def get_user_orders():
 @order_bp.route("/orders/<int:order_id>")
 @login_required
 def get_order_details(order_id):
-    order = Order.query.filter_by(
-        id=order_id, user_id=current_user.id).first_or_404()
+    # FIXED: Eager load order items and products
+    order = Order.query.options(
+        joinedload(Order.items).joinedload(OrderItem.product)
+    ).filter_by(id=order_id, user_id=current_user.id).first_or_404()
+
     return render_template('order_details.html', order=order)

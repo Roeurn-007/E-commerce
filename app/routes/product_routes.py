@@ -17,6 +17,8 @@ def home():
 def get_products():
     category_id = request.args.get('category_id', type=int)
     search = request.args.get('search', '')
+    min_price = request.args.get('min_price', type=float)
+    max_price = request.args.get('max_price', type=float)
 
     query = Product.query.filter_by(is_active=True)
 
@@ -27,6 +29,10 @@ def get_products():
             Product.name.ilike(f'%{search}%'),
             Product.description.ilike(f'%{search}%')
         ))
+    if min_price is not None:
+        query = query.filter(Product.price >= min_price)
+    if max_price is not None:
+        query = query.filter(Product.price <= max_price)
 
     products = query.all()
     categories = Category.query.all()

@@ -19,28 +19,18 @@ def get_cart():
 @login_required
 def add_to_cart(product_id):
     product = Product.query.get_or_404(product_id)
-
-    if product.stock_quantity <= 0:
-        flash("Sorry, this product is out of stock!", "danger")
-        return redirect(request.referrer or url_for('products.get_products'))
-
     cart_item = Cart.query.filter_by(
         user_id=current_user.id, product_id=product.id).first()
 
     if cart_item:
-        if cart_item.quantity + 1 > product.stock_quantity:
-            flash(
-                f"Only {product.stock_quantity} items available in stock!", "warning")
-        else:
-            cart_item.quantity += 1
-            flash("Product quantity updated in cart!", "success")
+        cart_item.quantity += 1
     else:
         cart_item = Cart(user_id=current_user.id,
                          product_id=product.id, quantity=1)
         db.session.add(cart_item)
-        flash("Product added to cart!", "success")
 
     db.session.commit()
+    flash("Product added to cart!", "success")
     return redirect(request.referrer or url_for('products.get_products'))
 
 
@@ -54,13 +44,9 @@ def update_cart_item(cart_id):
 
     quantity = request.form.get('quantity', type=int)
     if quantity and quantity > 0:
-        if quantity > cart_item.product.stock_quantity + cart_item.quantity:
-            flash(
-                f"Only {cart_item.product.stock_quantity} items available in stock!", "warning")
-        else:
-            cart_item.quantity = quantity
-            db.session.commit()
-            flash("Cart updated!", "success")
+        cart_item.quantity = quantity
+        db.session.commit()
+        flash("Cart updated!", "success")
     else:
         flash("Invalid quantity!", "danger")
 

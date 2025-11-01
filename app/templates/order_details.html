@@ -20,9 +20,9 @@
                     <p class="mb-2"><strong>Order Date:</strong> {{ order.created_at.strftime('%Y-%m-%d %H:%M') }}</p>
                     <p class="mb-2"><strong>Status:</strong>
                         <span class="badge 
-                            {% if order.status == 'completed' %}bg-success
-                            {% elif order.status == 'confirmed' %}bg-primary
-                            {% elif order.status == 'shipped' %}bg-info
+                            {% if order.status == 'completed' or order.status == 'delivered' %}bg-success
+                            {% elif order.status == 'shipped' %}bg-primary
+                            {% elif order.status == 'processing' or order.status == 'confirmed' %}bg-info
                             {% elif order.status == 'cancelled' %}bg-danger
                             {% else %}bg-warning{% endif %}">
                             {{ order.status|title }}
