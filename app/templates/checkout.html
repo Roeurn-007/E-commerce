@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="text-center py-5">
+    <div class="checkout-success">
+        <i class="fas fa-check-circle fa-5x text-success mb-4"></i>
+        <h2>Order Successful! 🎉</h2>
+        <p class="lead">Thank you for shopping with TechHub!</p>
+        <div class="alert alert-info mx-auto" style="max-width: 500px;">
+            <h5>Order Details</h5>
+            <p class="mb-1">Order Number: <strong>{{ order_number }}</strong></p>
+            <p class="mb-0">We've sent a confirmation email with your order details.</p>
+        </div>
+        <div class="mt-4">
+            <a href="{{ url_for('orders.get_user_orders') }}" class="btn btn-primary me-3">View Orders</a>
+            <a href="{{ url_for('products.home') }}" class="btn btn-outline-primary">Continue Shopping</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

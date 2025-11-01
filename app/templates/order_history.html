@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3 class="mb-4">Your Orders</h3>
+
+{% if orders %}
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                        <th>Payment Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td><strong>{{ order.order_number }}</strong></td>
+                        <td>{{ order.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                        <td>${{ "%.2f"|format(order.total_amount) }}</td>
+                        <td>
+                            <span class="badge 
+                                {% if order.status == 'completed' %}bg-success
+                                {% elif order.status == 'confirmed' %}bg-primary
+                                {% elif order.status == 'shipped' %}bg-info
+                                {% elif order.status == 'cancelled' %}bg-danger
+                                {% else %}bg-warning{% endif %}">
+                                {{ order.status|title }}
+                            </span>
+                        </td>
+                        <td>
+                            <span class="badge 
+                                {% if order.payment_status == 'paid' %}bg-success
+                                {% elif order.payment_status == 'failed' %}bg-danger
+                                {% else %}bg-warning{% endif %}">
+                                {{ order.payment_status|title }}
+                            </span>
+                        </td>
+                        <td>
+                            <a href="{{ url_for('orders.get_order_details', order_id=order.id) }}"
+                                class="btn btn-sm btn-outline-primary">
+                                View Details
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="text-center py-5">
+    <i class="fas fa-box-open fa-4x text-muted mb-3"></i>
+    <h4>No orders yet</h4>
+    <p class="text-muted">You haven't placed any orders yet.</p>
+    <a href="{{ url_for('products.get_products') }}" class="btn btn-primary">Start Shopping</a>
+</div>
+{% endif %}
+{% endblock %}
