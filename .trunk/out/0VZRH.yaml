@@ -1,0 +1,20 @@
+trunk_cli_version: 1.25.0
+title: Check [[on-demand] [isort:format:app\_init_.py:HEAD]]
+report:
+  - linter:
+      command: |
+        'C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\isort\7.0.0-6677305afce7ac706351a44b8b1fb93b/Scripts\isort.exe' -q --overwrite-in-place 'app\_init_.py'
+      stdin_path: (none)
+      run_from: C:\Users\ROEURN.ROS\AppData\Local\Temp\trunk\dce2qhu\
+      timeout: 10m
+      rerun: (cd C:\Users\ROEURN.ROS\AppData\Local\Temp\trunk\dce2qhu\; env -i PYTHONUTF8=1 'SYSTEMROOT=C:\WINDOWS' HOME= 'VIRTUAL_ENV=C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\isort\7.0.0-6677305afce7ac706351a44b8b1fb93b' 'PATH=C:/Users/ROEURN.ROS/AppData/Local/trunk/tools/git-bash/2.40.1-da0c3e1526d36e62bf43d06ec46c5052/bin;C:/Users/ROEURN.ROS/AppData/Local/trunk/tools/git-bash/2.40.1-da0c3e1526d36e62bf43d06ec46c5052/usr/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\isort\7.0.0-6677305afce7ac706351a44b8b1fb93b/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\isort\7.0.0-6677305afce7ac706351a44b8b1fb93b/Scripts;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\git-bash\2.40.1-da0c3e1526d36e62bf43d06ec46c5052/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\git-bash\2.40.1-da0c3e1526d36e62bf43d06ec46c5052/usr/bin' 'C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\isort\7.0.0-6677305afce7ac706351a44b8b1fb93b/Scripts\isort.exe' -q --overwrite-in-place 'app\_init_.py')
+      affects_cache:
+        []
+      direct_configs:
+        - .isort.cfg
+      exit_status: exited
+      exit_code: 0
+      stdout: (none)
+      stderr: (none)
+    parser: |
+      (none)

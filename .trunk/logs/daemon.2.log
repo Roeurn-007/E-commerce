@@ -1,0 +1,562 @@
+[2025-11-01 09:13:51.274] [global] [info] [cache.cc:1117] [on-demand] [git-diff-check:lint:app\_init_.py:upstream] Linter ran in 133ms
+[2025-11-01 09:13:51.330] [global] [info] [cache.cc:1117] [on-demand] [ruff:lint:app\_init_.py:HEAD] Linter ran in 150ms
+[2025-11-01 09:13:51.497] [global] [info] [cache.cc:1117] [on-demand] [ruff:lint:app\_init_.py:upstream] Linter ran in 317ms
+[2025-11-01 09:13:51.579] [global] [info] [cache.cc:1117] [on-demand] [isort:format:app\_init_.py:HEAD] Linter ran in 398ms
+[2025-11-01 09:13:51.763] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:13:51.764] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:13:51.783] [global] [info] [service.cc:528] [user-agent= sid=18] TX:virtual grpc::Status trunk::cli::lint::Service::Lint(grpc::ServerContext *, const proto::v1::LintRequest *, grpc::ServerWriter<proto::v1::LintResponse> *) status=OK
+[2025-11-01 09:13:51.784] [global] [info] [service.cc:585] [user-agent=lsp-proxy sid=18] RX:virtual grpc::Status trunk::cli::lint::Service::GetLandingState(grpc::ServerContext *, const proto::v1::GetLandingStateRequest *, proto::v1::GetLandingStateResponse *)
+[2025-11-01 09:13:51.785] [global] [info] [runner.cc:1128] Git-ignored path: .trunk\configs\.isort.cfg
+[2025-11-01 09:13:51.787] [global] [info] [runner.cc:1128] Git-ignored path: .trunk\configs\ruff.toml
+[2025-11-01 09:13:51.788] [global] [info] [service.cc:585] [user-agent=lsp-proxy sid=18] TX:virtual grpc::Status trunk::cli::lint::Service::GetLandingState(grpc::ServerContext *, const proto::v1::GetLandingStateRequest *, proto::v1::GetLandingStateResponse *) status=OK
+[2025-11-01 09:13:51.791] [global] [info] [service.cc:256] lint session ended sid=18
+[2025-11-01 09:13:51.791] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=18] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:13:51.791] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=18] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:13:51.791] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:13:51.800] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:13:52.149] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:13:52.235] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:13:52.235] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:13:52.236] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:13:52.357] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=20 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:13:52.558] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:13:52.559] [global] [info] [service.cc:488] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::FormatBuffers(grpc::ServerContext *, const proto::v1::FormatBuffersRequest *, proto::v1::FormatBuffersResponse *)
+[2025-11-01 09:13:52.668] [global] [info] [cache.cc:974] [on-demand] [black:format:app\_init_.py:HEAD] running linter (cache-key:2df4be918e2f8d53a04a47b6b64fdcb9)
+[2025-11-01 09:13:52.672] [global] [info] [cache.cc:978] [on-demand] [isort:format:app\_init_.py:HEAD] running linter (uncacheable)
+[2025-11-01 09:13:52.672] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\black\25.9.0-8841c46f9577314a4a4e2006407de2c0/bin\black.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:13:52.672] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\black\25.9.0-8841c46f9577314a4a4e2006407de2c0/bin\black // 3:The system cannot find the path specified.
+[2025-11-01 09:13:52.673] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\black\25.9.0-8841c46f9577314a4a4e2006407de2c0/bin\black.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:13:52.692] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\isort\7.0.0-6677305afce7ac706351a44b8b1fb93b/bin\isort.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:13:52.692] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\isort\7.0.0-6677305afce7ac706351a44b8b1fb93b/bin\isort // 3:The system cannot find the path specified.
+[2025-11-01 09:13:52.692] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\isort\7.0.0-6677305afce7ac706351a44b8b1fb93b/bin\isort.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:13:52.990] [global] [info] [cache.cc:1117] [on-demand] [isort:format:app\_init_.py:HEAD] Linter ran in 300ms
+[2025-11-01 09:13:53.062] [global] [info] [cache.cc:1117] [on-demand] [black:format:app\_init_.py:HEAD] Linter ran in 391ms
+[2025-11-01 09:13:53.083] [global] [info] [cache.cc:978] [on-demand] [isort:format:app\_init_.py:HEAD] running linter (uncacheable)
+[2025-11-01 09:13:53.092] [global] [info] [cache.cc:974] [on-demand] [black:format:app\_init_.py:HEAD] running linter (cache-key:3f20456585eb6fae34a60ecc6abe07cb)
+[2025-11-01 09:13:53.096] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\black\25.9.0-8841c46f9577314a4a4e2006407de2c0/bin\black.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:13:53.096] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\black\25.9.0-8841c46f9577314a4a4e2006407de2c0/bin\black // 3:The system cannot find the path specified.
+[2025-11-01 09:13:53.096] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\black\25.9.0-8841c46f9577314a4a4e2006407de2c0/bin\black.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:13:53.099] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\isort\7.0.0-6677305afce7ac706351a44b8b1fb93b/bin\isort.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:13:53.099] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\isort\7.0.0-6677305afce7ac706351a44b8b1fb93b/bin\isort // 3:The system cannot find the path specified.
+[2025-11-01 09:13:53.099] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\isort\7.0.0-6677305afce7ac706351a44b8b1fb93b/bin\isort.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:13:53.370] [global] [info] [cache.cc:1117] [on-demand] [isort:format:app\_init_.py:HEAD] Linter ran in 272ms
+[2025-11-01 09:13:53.418] [global] [info] [cache.cc:1117] [on-demand] [black:format:app\_init_.py:HEAD] Linter ran in 323ms
+[2025-11-01 09:13:53.450] [global] [info] [service.cc:488] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::FormatBuffers(grpc::ServerContext *, const proto::v1::FormatBuffersRequest *, proto::v1::FormatBuffersResponse *) status=OK
+[2025-11-01 09:13:53.450] [global] [info] [service.cc:256] lint session ended sid=20
+[2025-11-01 09:13:53.451] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=20] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:13:53.451] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=20] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:13:53.451] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:13:53.457] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:10.483] [global] [info] [runner.cc:154] Executing action trunk-single-player-auto-on-upgrade.schedule.24h+5m
+[2025-11-01 09:14:12.131] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:14:12.135] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *)
+[2025-11-01 09:14:12.395] [global] [warning] [regex.cc:19] Parse regex function failed: Input '11.9.2' did not match regex 'flyway-(?P<semver>.*)'
+[2025-11-01 09:14:12.396] [global] [warning] [download.cc:231] flyway could not parse arg 'semver' from regex function '${version}=>flyway-(?P<semver>.*)' 
+[2025-11-01 09:14:12.428] [global] [info] [plugin_upgrade.cc:71] Querying latest version for plugin trunk
+[2025-11-01 09:14:12.494] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:12.494] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:12.494] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:12.557] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=21 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:14:12.633] [global] [info] [service.cc:118] Notifications config has not changed
+[2025-11-01 09:14:12.643] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:12.644] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:12.752] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:14:12.753] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *)
+[2025-11-01 09:14:12.755] [global] [info] [cli_upgrade.cc:85] Checking for latest trunk prod version...
+[2025-11-01 09:14:12.757] [global] [info] [plugin_upgrade.cc:71] Querying latest version for plugin trunk
+[2025-11-01 09:14:12.990] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\_init_.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.991] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\cart.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.992] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\category.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.993] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\order.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.993] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\_init_.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.994] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\product.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.995] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\cart.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.996] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\user.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.997] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\category.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.997] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\wishlist.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.998] [global] [info] [cache.cc:934] [monitor] [black:format:app\_init_.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.998] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\order.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:12.999] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\auth_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.000] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\cart.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.000] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\product.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.000] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\cart_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.001] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\category.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.001] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\user.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.002] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\order.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.002] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\category_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.003] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\wishlist.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.004] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\product.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.004] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\order_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.004] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\auth_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.005] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\user.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.006] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\auth_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.006] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\cart_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.007] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\product_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.008] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\category_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.008] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\cart_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.009] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\wishlist_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.009] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\order_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.011] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\category_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.011] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\cart.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.012] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\product_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.012] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\order_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.013] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\checkout.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.013] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\wishlist_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.014] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\product_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.014] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\index.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.014] [global] [info] [cache.cc:934] [monitor] [bandit:lint:init_db.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.016] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\layout.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.016] [global] [info] [cache.cc:934] [monitor] [black:format:init_db.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.017] [global] [info] [cache.cc:934] [monitor] [bandit:lint:run.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.018] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\login.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.019] [global] [info] [cache.cc:934] [monitor] [black:format:run.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.019] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\order_details.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.020] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\order_history.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.020] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\place_order.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.020] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\product_detail.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.021] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\product_list.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.021] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\register.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.022] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\search_results.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.023] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\wishlist.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.023] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:init_db.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.024] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:requirements.txt:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.025] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:run.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:13.778] [global] [info] [release.cc:131] Retrieved 7 linter-version pairs from ReleaseVersionService
+[2025-11-01 09:14:13.862] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *) status=OK
+[2025-11-01 09:14:13.884] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::ApplySpecifiedUpgrades(grpc::ServerContext *, const upgrade::proto::v1::ApplySpecifiedUpgradesRequest *, upgrade::proto::v1::ApplySpecifiedUpgradesResponse *)
+[2025-11-01 09:14:13.885] [global] [info] [service.cc:225] Applying upgrade changes to trunk.yaml
+[2025-11-01 09:14:13.886] [global] [info] [linter_upgrade.cc:345] Detected 0 configs to write
+[2025-11-01 09:14:13.886] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::ApplySpecifiedUpgrades(grpc::ServerContext *, const upgrade::proto::v1::ApplySpecifiedUpgradesRequest *, upgrade::proto::v1::ApplySpecifiedUpgradesResponse *) status=OK
+[2025-11-01 09:14:14.028] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:14:14.115] [global] [info] [cli_upgrade.cc:92] Successfully fetched latest trunk 1.25.0 version: prod
+[2025-11-01 09:14:14.192] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *)
+[2025-11-01 09:14:14.265] [global] [warning] [regex.cc:19] Parse regex function failed: Input '11.9.2' did not match regex 'flyway-(?P<semver>.*)'
+[2025-11-01 09:14:14.265] [global] [warning] [download.cc:231] flyway could not parse arg 'semver' from regex function '${version}=>flyway-(?P<semver>.*)' 
+[2025-11-01 09:14:14.390] [global] [info] [service.cc:118] Notifications config has not changed
+[2025-11-01 09:14:14.398] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:14.398] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:14.490] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:14.490] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:14.490] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:14.562] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=22 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:14:14.727] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\_init_.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.728] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\cart.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.729] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\category.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.729] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\order.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.730] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\_init_.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.730] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\product.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.730] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\cart.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.731] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\user.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.731] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\category.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.732] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\wishlist.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.733] [global] [info] [cache.cc:934] [monitor] [black:format:app\_init_.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.733] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\order.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.733] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\auth_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.734] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\cart.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.734] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\product.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.734] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\cart_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.735] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\category.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.735] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\user.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.736] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\category_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.737] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\order.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.737] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\wishlist.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.738] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\order_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.739] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\product.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.739] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\auth_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.739] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\product_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.740] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\user.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.740] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\cart_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.741] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\wishlist_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.742] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\auth_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.742] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\category_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.743] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\cart.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.744] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\cart_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.744] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\order_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.744] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\checkout.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.745] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\category_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.746] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\product_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.746] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\index.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.747] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\order_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.748] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\wishlist_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.748] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\layout.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.749] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\product_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.749] [global] [info] [cache.cc:934] [monitor] [bandit:lint:init_db.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.750] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\login.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.751] [global] [info] [cache.cc:934] [monitor] [black:format:init_db.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.751] [global] [info] [cache.cc:934] [monitor] [bandit:lint:run.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.752] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\order_details.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.753] [global] [info] [cache.cc:934] [monitor] [black:format:run.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.753] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\order_history.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.754] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\place_order.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.754] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\product_detail.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.755] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\product_list.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.755] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\register.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.755] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\search_results.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.756] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\wishlist.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.756] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:init_db.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.757] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:requirements.txt:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.758] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:run.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:14.766] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:14:14.766] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *)
+[2025-11-01 09:14:14.769] [global] [info] [cli_upgrade.cc:85] Checking for latest trunk prod version...
+[2025-11-01 09:14:14.770] [global] [info] [plugin_upgrade.cc:71] Querying latest version for plugin trunk
+[2025-11-01 09:14:15.382] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:15.382] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm // 3:The system cannot find the path specified.
+[2025-11-01 09:14:15.382] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:15.434] [global] [info] [release.cc:131] Retrieved 7 linter-version pairs from ReleaseVersionService
+[2025-11-01 09:14:15.436] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:15.436] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm // 3:The system cannot find the path specified.
+[2025-11-01 09:14:15.436] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:15.814] [global] [info] [release.cc:131] Retrieved 7 linter-version pairs from ReleaseVersionService
+[2025-11-01 09:14:16.360] [global] [info] [cli_upgrade.cc:92] Successfully fetched latest trunk 1.25.0 version: prod
+[2025-11-01 09:14:16.434] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:16.434] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:16.949] [global] [info] [service.cc:162] Writing notification state to file
+[2025-11-01 09:14:16.998] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:16.998] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm // 3:The system cannot find the path specified.
+[2025-11-01 09:14:16.998] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:20.580] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *) status=OK
+[2025-11-01 09:14:20.582] [global] [info] [service.cc:256] lint session ended sid=22
+[2025-11-01 09:14:20.582] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=22] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:20.584] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=22] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:20.584] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:20.592] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:22.684] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *) status=OK
+[2025-11-01 09:14:22.700] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::ApplySpecifiedUpgrades(grpc::ServerContext *, const upgrade::proto::v1::ApplySpecifiedUpgradesRequest *, upgrade::proto::v1::ApplySpecifiedUpgradesResponse *)
+[2025-11-01 09:14:22.701] [global] [info] [service.cc:225] Applying upgrade changes to trunk.yaml
+[2025-11-01 09:14:22.702] [global] [info] [linter_upgrade.cc:345] Detected 0 configs to write
+[2025-11-01 09:14:22.702] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::ApplySpecifiedUpgrades(grpc::ServerContext *, const upgrade::proto::v1::ApplySpecifiedUpgradesRequest *, upgrade::proto::v1::ApplySpecifiedUpgradesResponse *) status=OK
+[2025-11-01 09:14:22.819] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:14:23.042] [global] [warning] [regex.cc:19] Parse regex function failed: Input '11.9.2' did not match regex 'flyway-(?P<semver>.*)'
+[2025-11-01 09:14:23.043] [global] [warning] [download.cc:231] flyway could not parse arg 'semver' from regex function '${version}=>flyway-(?P<semver>.*)' 
+[2025-11-01 09:14:23.333] [global] [warning] [regex.cc:19] Parse regex function failed: Input '11.9.2' did not match regex 'flyway-(?P<semver>.*)'
+[2025-11-01 09:14:23.333] [global] [warning] [download.cc:231] flyway could not parse arg 'semver' from regex function '${version}=>flyway-(?P<semver>.*)' 
+[2025-11-01 09:14:23.417] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::actions::Service::Enable(grpc::ServerContext *, const proto::v1::EnableRequest *, proto::v1::EnableResponse *)
+[2025-11-01 09:14:23.432] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::actions::Service::Enable(grpc::ServerContext *, const proto::v1::EnableRequest *, proto::v1::EnableResponse *) status=OK
+[2025-11-01 09:14:23.442] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::actions::Service::Disable(grpc::ServerContext *, const proto::v1::DisableRequest *, proto::v1::DisableResponse *)
+[2025-11-01 09:14:23.594] [global] [warning] [regex.cc:19] Parse regex function failed: Input '11.9.2' did not match regex 'flyway-(?P<semver>.*)'
+[2025-11-01 09:14:23.594] [global] [warning] [download.cc:231] flyway could not parse arg 'semver' from regex function '${version}=>flyway-(?P<semver>.*)' 
+[2025-11-01 09:14:23.741] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::actions::Service::Disable(grpc::ServerContext *, const proto::v1::DisableRequest *, proto::v1::DisableResponse *) status=OK
+[2025-11-01 09:14:24.077] [global] [warning] [regex.cc:19] Parse regex function failed: Input '11.9.2' did not match regex 'flyway-(?P<semver>.*)'
+[2025-11-01 09:14:24.077] [global] [warning] [download.cc:231] flyway could not parse arg 'semver' from regex function '${version}=>flyway-(?P<semver>.*)' 
+[2025-11-01 09:14:24.085] [global] [info] [service.cc:145] [user-agent=cli/on-upgrade sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:14:24.223] [global] [warning] [regex.cc:19] Parse regex function failed: Input '11.9.2' did not match regex 'flyway-(?P<semver>.*)'
+[2025-11-01 09:14:24.223] [global] [warning] [download.cc:231] flyway could not parse arg 'semver' from regex function '${version}=>flyway-(?P<semver>.*)' 
+[2025-11-01 09:14:24.347] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:24.348] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:24.348] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:24.454] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:24.454] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:24.454] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:24.500] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=23 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:14:24.532] [global] [info] [service.cc:227] [user-agent=cli/on-upgrade sid=n/a] lint session created sid=24 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 1, client_id: , scope: 1
+[2025-11-01 09:14:24.585] [global] [info] [service.cc:118] Notifications config has not changed
+[2025-11-01 09:14:24.590] [global] [info] [runner.cc:54] Config file changed, rebuilding DAG
+[2025-11-01 09:14:24.605] [global] [info] [service.cc:49] Tools config updated; updating tools
+[2025-11-01 09:14:24.644] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:24.645] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:24.704] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:14:24.705] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *)
+[2025-11-01 09:14:24.707] [global] [info] [cli_upgrade.cc:85] Checking for latest trunk prod version...
+[2025-11-01 09:14:24.708] [global] [info] [plugin_upgrade.cc:71] Querying latest version for plugin trunk
+[2025-11-01 09:14:24.735] [global] [info] [service.cc:145] [user-agent=cli/on-upgrade sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:14:24.736] [global] [info] [service.cc:409] [user-agent=cli/on-upgrade sid=24] RX:virtual grpc::Status trunk::cli::lint::Service::Queue(grpc::ServerContext *, const proto::v1::QueueRequest *, proto::v1::QueueResponse *)
+[2025-11-01 09:14:24.739] [global] [info] [service.cc:409] [user-agent=cli/on-upgrade sid=24] TX:virtual grpc::Status trunk::cli::lint::Service::Queue(grpc::ServerContext *, const proto::v1::QueueRequest *, proto::v1::QueueResponse *) status=OK
+[2025-11-01 09:14:24.740] [global] [info] [service.cc:528] [user-agent=cli/on-upgrade sid=24] RX:virtual grpc::Status trunk::cli::lint::Service::Lint(grpc::ServerContext *, const proto::v1::LintRequest *, grpc::ServerWriter<proto::v1::LintResponse> *)
+[2025-11-01 09:14:24.752] [global] [info] [cache.cc:978] [on-demand] [prettier:format:.trunk\trunk.yaml:HEAD] running linter (uncacheable)
+[2025-11-01 09:14:25.058] [global] [info] [cache.cc:974] [monitor] [trufflehog:lint:.trunk\.gitignore:HEAD] running linter (cache-key:745556beff1b2da397a3b3cc60ad5267)
+[2025-11-01 09:14:25.059] [global] [info] [cache.cc:974] [monitor] [trufflehog:lint:.trunk\configs\.isort.cfg:HEAD] running linter (cache-key:878806b71506b799832a0a63bf588c5e)
+[2025-11-01 09:14:25.059] [global] [info] [cache.cc:974] [monitor] [trufflehog:lint:.trunk\configs\ruff.toml:HEAD] running linter (cache-key:2ded352f484741e6b62d54be22c332a0)
+[2025-11-01 09:14:25.059] [global] [info] [cache.cc:974] [monitor] [trufflehog:lint:.trunk\trunk.yaml:HEAD] running linter (cache-key:5669789840168fe259763c183af35131)
+[2025-11-01 09:14:25.060] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\_init_.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.060] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\_init_.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.061] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\cart.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.062] [global] [info] [cache.cc:934] [monitor] [black:format:app\_init_.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.062] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\cart.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.062] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\category.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.063] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\cart.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.063] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\category.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.064] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\order.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.065] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\category.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.065] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\order.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.065] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\product.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.066] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\order.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.066] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\product.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.067] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\user.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.068] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\product.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.068] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\user.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.068] [global] [info] [cache.cc:934] [monitor] [black:format:app\models\user.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.068] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\models\wishlist.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.069] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\models\wishlist.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.070] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\auth_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.070] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\auth_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.070] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\auth_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.071] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\cart_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.071] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\cart_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.072] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\cart_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.073] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\category_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.073] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\category_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.073] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\category_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.075] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\order_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.075] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\order_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.076] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\order_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.077] [global] [info] [cache.cc:934] [monitor] [black:format:app\routes\product_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.077] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\product_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.078] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\product_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.079] [global] [info] [cache.cc:934] [monitor] [black:format:init_db.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.079] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\routes\wishlist_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.080] [global] [info] [cache.cc:934] [monitor] [bandit:lint:app\routes\wishlist_routes.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.081] [global] [info] [cache.cc:934] [monitor] [black:format:run.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.081] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\cart.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.081] [global] [info] [cache.cc:934] [monitor] [bandit:lint:init_db.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.082] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\checkout.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.083] [global] [info] [cache.cc:934] [monitor] [bandit:lint:run.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.083] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\index.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.083] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\layout.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.084] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\login.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.084] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\order_details.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.085] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\order_history.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.085] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\place_order.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.086] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\product_detail.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.086] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\product_list.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.087] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\register.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.087] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\search_results.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.088] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:app\templates\wishlist.html:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.089] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:init_db.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.089] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:requirements.txt:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.090] [global] [info] [cache.cc:934] [monitor] [trufflehog:lint:run.py:HEAD] already cached, not running linter
+[2025-11-01 09:14:25.113] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *)
+[2025-11-01 09:14:25.116] [global] [info] [cli_upgrade.cc:85] Checking for latest trunk prod version...
+[2025-11-01 09:14:25.117] [global] [info] [plugin_upgrade.cc:71] Querying latest version for plugin trunk
+[2025-11-01 09:14:25.400] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/bin\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.400] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/bin\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.401] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/bin\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.401] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/Scripts\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.401] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/Scripts\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.401] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/Scripts\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.401] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.401] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.401] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.472] [global] [info] [cache.cc:1117] [on-demand] [prettier:format:.trunk\trunk.yaml:HEAD] Linter ran in 694ms
+[2025-11-01 09:14:25.681] [global] [info] [service.cc:528] [user-agent=cli/on-upgrade sid=24] TX:virtual grpc::Status trunk::cli::lint::Service::Lint(grpc::ServerContext *, const proto::v1::LintRequest *, grpc::ServerWriter<proto::v1::LintResponse> *) status=OK
+[2025-11-01 09:14:25.682] [global] [info] [service.cc:607] [user-agent=cli/on-upgrade sid=24] RX:virtual grpc::Status trunk::cli::lint::Service::GetCurrentDiagnostic(grpc::ServerContext *, const proto::v1::GetCurrentDiagnosticRequest *, proto::v1::GetCurrentDiagnosticResponse *)
+[2025-11-01 09:14:25.683] [global] [info] [service.cc:607] [user-agent=cli/on-upgrade sid=24] TX:virtual grpc::Status trunk::cli::lint::Service::GetCurrentDiagnostic(grpc::ServerContext *, const proto::v1::GetCurrentDiagnosticRequest *, proto::v1::GetCurrentDiagnosticResponse *) status=OK
+[2025-11-01 09:14:25.683] [global] [info] [service.cc:607] [user-agent=cli/on-upgrade sid=24] RX:virtual grpc::Status trunk::cli::lint::Service::GetCurrentDiagnostic(grpc::ServerContext *, const proto::v1::GetCurrentDiagnosticRequest *, proto::v1::GetCurrentDiagnosticResponse *)
+[2025-11-01 09:14:25.683] [global] [info] [service.cc:607] [user-agent=cli/on-upgrade sid=24] TX:virtual grpc::Status trunk::cli::lint::Service::GetCurrentDiagnostic(grpc::ServerContext *, const proto::v1::GetCurrentDiagnosticRequest *, proto::v1::GetCurrentDiagnosticResponse *) status=OK
+[2025-11-01 09:14:25.684] [global] [info] [service.cc:256] lint session ended sid=24
+[2025-11-01 09:14:25.684] [global] [info] [service.cc:258] [user-agent=cli/on-upgrade sid=24] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:25.685] [global] [info] [service.cc:258] [user-agent=cli/on-upgrade sid=24] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:25.685] [global] [info] [service.cc:325] [user-agent=cli/on-upgrade sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:25.694] [global] [info] [service.cc:325] [user-agent=cli/on-upgrade sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:25.787] [global] [info] [release.cc:131] Retrieved 10 linter-version pairs from ReleaseVersionService
+[2025-11-01 09:14:25.790] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.790] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.790] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:25.984] [global] [info] [cli_upgrade.cc:92] Successfully fetched latest trunk 1.25.0 version: prod
+[2025-11-01 09:14:26.115] [global] [info] [release.cc:131] Retrieved 10 linter-version pairs from ReleaseVersionService
+[2025-11-01 09:14:26.384] [global] [info] [cli_upgrade.cc:92] Successfully fetched latest trunk 1.25.0 version: prod
+[2025-11-01 09:14:27.320] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.320] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.320] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.789] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\trufflehog\3.90.12-873886b30c6ffc914074b6f41d0d56d2/bin\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.789] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\trufflehog\3.90.12-873886b30c6ffc914074b6f41d0d56d2/bin\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.789] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\trufflehog\3.90.12-873886b30c6ffc914074b6f41d0d56d2/bin\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.789] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\trufflehog\3.90.12-873886b30c6ffc914074b6f41d0d56d2/Scripts\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.789] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\trufflehog\3.90.12-873886b30c6ffc914074b6f41d0d56d2/Scripts\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.789] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\trufflehog\3.90.12-873886b30c6ffc914074b6f41d0d56d2/Scripts\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.789] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.789] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.789] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:27.852] [global] [info] [cache.cc:1117] [monitor] [trufflehog:lint:.trunk\.gitignore... (33 files):HEAD] Linter ran in 2753ms
+[2025-11-01 09:14:28.532] [global] [info] [linter.cc:1791] Found config in plugin repo at C:\Users\ROEURN.ROS\AppData\Local\trunk\plugins\https---github-com-trunk-io-plugins\v1.7.3-4ebadccd80b22638\linters\yamllint\.yamllint.yaml
+[2025-11-01 09:14:29.223] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *) status=OK
+[2025-11-01 09:14:29.224] [global] [info] [service.cc:256] lint session ended sid=21
+[2025-11-01 09:14:29.224] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=21] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:29.225] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=21] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:29.226] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:29.238] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:29.239] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:14:29.305] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:29.305] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:29.305] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:29.385] [global] [info] [linter.cc:1791] Found config in plugin repo at C:\Users\ROEURN.ROS\AppData\Local\trunk\plugins\https---github-com-trunk-io-plugins\v1.7.3-4ebadccd80b22638\linters\yamllint\.yamllint.yaml
+[2025-11-01 09:14:29.399] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=25 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:14:29.612] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:14:29.614] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *)
+[2025-11-01 09:14:29.616] [global] [info] [cli_upgrade.cc:85] Checking for latest trunk prod version...
+[2025-11-01 09:14:29.617] [global] [info] [plugin_upgrade.cc:71] Querying latest version for plugin trunk
+[2025-11-01 09:14:30.900] [global] [info] [release.cc:131] Retrieved 10 linter-version pairs from ReleaseVersionService
+[2025-11-01 09:14:30.903] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:30.903] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm // 3:The system cannot find the path specified.
+[2025-11-01 09:14:30.903] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:30.938] [global] [info] [cli_upgrade.cc:92] Successfully fetched latest trunk 1.25.0 version: prod
+[2025-11-01 09:14:33.610] [global] [info] [linter.cc:1791] Found config in plugin repo at C:\Users\ROEURN.ROS\AppData\Local\trunk\plugins\https---github-com-trunk-io-plugins\v1.7.3-4ebadccd80b22638\linters\yamllint\.yamllint.yaml
+[2025-11-01 09:14:35.897] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *) status=OK
+[2025-11-01 09:14:35.944] [global] [info] [service.cc:256] lint session ended sid=23
+[2025-11-01 09:14:35.944] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=23] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:35.946] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=23] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:35.946] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:35.963] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:35.965] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:14:36.036] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:36.036] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:36.036] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:36.148] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=26 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:14:36.148] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:14:36.148] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *)
+[2025-11-01 09:14:36.150] [global] [info] [cli_upgrade.cc:85] Checking for latest trunk prod version...
+[2025-11-01 09:14:36.151] [global] [info] [plugin_upgrade.cc:71] Querying latest version for plugin trunk
+[2025-11-01 09:14:37.212] [global] [info] [release.cc:131] Retrieved 10 linter-version pairs from ReleaseVersionService
+[2025-11-01 09:14:37.216] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:37.216] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm // 3:The system cannot find the path specified.
+[2025-11-01 09:14:37.216] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:37.472] [global] [info] [cli_upgrade.cc:92] Successfully fetched latest trunk 1.25.0 version: prod
+[2025-11-01 09:14:40.280] [global] [info] [linter.cc:1791] Found config in plugin repo at C:\Users\ROEURN.ROS\AppData\Local\trunk\plugins\https---github-com-trunk-io-plugins\v1.7.3-4ebadccd80b22638\linters\yamllint\.yamllint.yaml
+[2025-11-01 09:14:43.915] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *) status=OK
+[2025-11-01 09:14:46.299] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *) status=OK
+[2025-11-01 09:14:46.300] [global] [info] [service.cc:256] lint session ended sid=26
+[2025-11-01 09:14:46.300] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=26] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:46.301] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=26] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:46.301] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:46.312] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:46.313] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:14:46.369] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:46.369] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:46.369] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:46.484] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=27 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:14:46.485] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:14:46.485] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *)
+[2025-11-01 09:14:46.486] [global] [info] [cli_upgrade.cc:85] Checking for latest trunk prod version...
+[2025-11-01 09:14:46.488] [global] [info] [plugin_upgrade.cc:71] Querying latest version for plugin trunk
+[2025-11-01 09:14:47.093] [global] [info] [notification_manager.cc:37] Writing to C:\Users\ROEURN.ROS\Desktop\E-commerce\.trunk\notifications\trunk-upgrade.yaml
+[2025-11-01 09:14:47.149] [global] [info] [notification_manager.cc:84] Reading from C:\Users\ROEURN.ROS\Desktop\E-commerce\.trunk\notifications\trunk-upgrade.yaml
+[2025-11-01 09:14:47.166] [global] [info] [service.cc:162] Writing notification state to file
+[2025-11-01 09:14:47.444] [global] [info] [release.cc:131] Retrieved 10 linter-version pairs from ReleaseVersionService
+[2025-11-01 09:14:47.447] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:47.447] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm // 3:The system cannot find the path specified.
+[2025-11-01 09:14:47.447] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:47.779] [global] [info] [cli_upgrade.cc:92] Successfully fetched latest trunk 1.25.0 version: prod
+[2025-11-01 09:14:50.132] [global] [info] [linter.cc:1791] Found config in plugin repo at C:\Users\ROEURN.ROS\AppData\Local\trunk\plugins\https---github-com-trunk-io-plugins\v1.7.3-4ebadccd80b22638\linters\yamllint\.yamllint.yaml
+[2025-11-01 09:14:52.720] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *) status=OK
+[2025-11-01 09:14:52.720] [global] [info] [service.cc:256] lint session ended sid=25
+[2025-11-01 09:14:52.720] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=25] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:52.721] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=25] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:52.721] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:52.728] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:52.729] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:14:52.795] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:52.795] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:52.795] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:14:52.860] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=28 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:14:53.062] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:14:53.063] [global] [info] [grpc.cc:22] RX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *)
+[2025-11-01 09:14:53.065] [global] [info] [cli_upgrade.cc:85] Checking for latest trunk prod version...
+[2025-11-01 09:14:53.066] [global] [info] [plugin_upgrade.cc:71] Querying latest version for plugin trunk
+[2025-11-01 09:14:54.050] [global] [info] [release.cc:131] Retrieved 10 linter-version pairs from ReleaseVersionService
+[2025-11-01 09:14:54.054] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:14:54.055] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm // 3:The system cannot find the path specified.
+[2025-11-01 09:14:54.055] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin\npm.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:14:54.340] [global] [info] [cli_upgrade.cc:92] Successfully fetched latest trunk 1.25.0 version: prod
+[2025-11-01 09:14:54.344] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *) status=OK
+[2025-11-01 09:14:54.345] [global] [info] [service.cc:256] lint session ended sid=27
+[2025-11-01 09:14:54.345] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=27] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:54.346] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=27] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:54.346] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:14:54.354] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:14:56.704] [global] [info] [linter.cc:1791] Found config in plugin repo at C:\Users\ROEURN.ROS\AppData\Local\trunk\plugins\https---github-com-trunk-io-plugins\v1.7.3-4ebadccd80b22638\linters\yamllint\.yamllint.yaml
+[2025-11-01 09:15:08.702] [global] [info] [grpc.cc:26] TX:virtual grpc::Status trunk::cli::UpgradeService::GetAvailableUpgrades(grpc::ServerContext *, const upgrade::proto::v1::GetAvailableUpgradesRequest *, grpc::ServerWriter<upgrade::proto::v1::GetAvailableUpgradesResponse> *) status=OK
+[2025-11-01 09:15:08.704] [global] [info] [service.cc:256] lint session ended sid=28
+[2025-11-01 09:15:08.704] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=28] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:15:08.706] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=28] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:15:08.706] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:15:08.719] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:15:50.431] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:15:50.513] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:15:50.513] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:15:50.513] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:15:50.609] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=29 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:15:50.814] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:15:50.815] [global] [info] [service.cc:439] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::GetChangedFiles(grpc::ServerContext *, const proto::v1::GetChangedFilesRequest *, proto::v1::GetChangedFilesResponse *)
+[2025-11-01 09:15:50.815] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:15:50.910] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:15:50.911] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:15:50.911] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:15:50.956] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:15:50.956] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:15:50.956] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:15:51.025] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=30 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:15:51.025] [global] [info] [service.cc:439] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::GetChangedFiles(grpc::ServerContext *, const proto::v1::GetChangedFilesRequest *, proto::v1::GetChangedFilesResponse *) status=OK
+[2025-11-01 09:15:51.229] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:15:51.230] [global] [info] [service.cc:488] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::FormatBuffers(grpc::ServerContext *, const proto::v1::FormatBuffersRequest *, proto::v1::FormatBuffersResponse *)
+[2025-11-01 09:15:51.392] [global] [info] [cache.cc:978] [on-demand] [prettier:format:app\templates\product_detail.html:HEAD] running linter (uncacheable)
+[2025-11-01 09:15:52.102] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/bin\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.102] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/bin\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.102] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/bin\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.102] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/Scripts\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.102] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/Scripts\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.102] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/Scripts\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.102] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.102] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.103] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.159] [global] [info] [cache.cc:1117] [on-demand] [prettier:format:app\templates\product_detail.html:HEAD] Linter ran in 737ms
+[2025-11-01 09:15:52.184] [global] [info] [service.cc:488] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::FormatBuffers(grpc::ServerContext *, const proto::v1::FormatBuffersRequest *, proto::v1::FormatBuffersResponse *) status=OK
+[2025-11-01 09:15:52.184] [global] [info] [service.cc:256] lint session ended sid=30
+[2025-11-01 09:15:52.184] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=30] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:15:52.186] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=30] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:15:52.186] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:15:52.195] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:15:52.199] [global] [info] [service.cc:409] [user-agent=lsp-proxy sid=29] RX:virtual grpc::Status trunk::cli::lint::Service::Queue(grpc::ServerContext *, const proto::v1::QueueRequest *, proto::v1::QueueResponse *)
+[2025-11-01 09:15:52.202] [global] [info] [service.cc:409] [user-agent=lsp-proxy sid=29] TX:virtual grpc::Status trunk::cli::lint::Service::Queue(grpc::ServerContext *, const proto::v1::QueueRequest *, proto::v1::QueueResponse *) status=OK
+[2025-11-01 09:15:52.202] [global] [info] [service.cc:528] [user-agent= sid=29] RX:virtual grpc::Status trunk::cli::lint::Service::Lint(grpc::ServerContext *, const proto::v1::LintRequest *, grpc::ServerWriter<proto::v1::LintResponse> *)
+[2025-11-01 09:15:52.212] [global] [info] [cache.cc:978] [on-demand] [git-diff-check:lint:app\templates\product_detail.html:HEAD] running linter (uncacheable)
+[2025-11-01 09:15:52.217] [global] [info] [cache.cc:934] [on-demand] [trufflehog:lint:app\templates\product_detail.html:HEAD] already cached, not running linter
+[2025-11-01 09:15:52.222] [global] [info] [cache.cc:978] [on-demand] [prettier:format:app\templates\product_detail.html:HEAD] running linter (uncacheable)
+[2025-11-01 09:15:52.285] [global] [info] [cache.cc:1117] [on-demand] [git-diff-check:lint:app\templates\product_detail.html:HEAD] Linter ran in 72ms
+[2025-11-01 09:15:52.720] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/bin\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.720] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/bin\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.720] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/bin\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.720] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/Scripts\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.720] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/Scripts\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.720] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/Scripts\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.720] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3.bat // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.720] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3 // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.720] [global] [warning] [resolve_binary.cc:46] is_regular_file check failed for for C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin\python3.exe // 3:The system cannot find the path specified.
+[2025-11-01 09:15:52.772] [global] [info] [cache.cc:1117] [on-demand] [prettier:format:app\templates\product_detail.html:HEAD] Linter ran in 513ms
+[2025-11-01 09:15:52.987] [global] [info] [service.cc:528] [user-agent= sid=29] TX:virtual grpc::Status trunk::cli::lint::Service::Lint(grpc::ServerContext *, const proto::v1::LintRequest *, grpc::ServerWriter<proto::v1::LintResponse> *) status=OK
+[2025-11-01 09:15:52.989] [global] [info] [service.cc:585] [user-agent=lsp-proxy sid=29] RX:virtual grpc::Status trunk::cli::lint::Service::GetLandingState(grpc::ServerContext *, const proto::v1::GetLandingStateRequest *, proto::v1::GetLandingStateResponse *)
+[2025-11-01 09:15:52.990] [global] [info] [service.cc:585] [user-agent=lsp-proxy sid=29] TX:virtual grpc::Status trunk::cli::lint::Service::GetLandingState(grpc::ServerContext *, const proto::v1::GetLandingStateRequest *, proto::v1::GetLandingStateResponse *) status=OK
+[2025-11-01 09:15:52.995] [global] [info] [service.cc:256] lint session ended sid=29
+[2025-11-01 09:15:52.995] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=29] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:15:52.997] [global] [info] [service.cc:258] [user-agent=lsp-proxy sid=29] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:15:52.997] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *)
+[2025-11-01 09:15:53.009] [global] [info] [service.cc:325] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::End(grpc::ServerContext *, const proto::v1::EndRequest *, proto::v1::EndResponse *) status=OK
+[2025-11-01 09:16:50.655] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:16:50.751] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:16:50.752] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:16:50.752] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:16:50.848] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=31 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:16:51.058] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK
+[2025-11-01 09:16:51.059] [global] [info] [service.cc:439] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::GetChangedFiles(grpc::ServerContext *, const proto::v1::GetChangedFilesRequest *, proto::v1::GetChangedFilesResponse *)
+[2025-11-01 09:16:51.059] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] RX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *)
+[2025-11-01 09:16:51.142] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:16:51.142] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:16:51.142] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:16:51.196] [global] [info] [git_source_control.cc:517] Computing merge base between aa4844b4363082e1c2e946c09a8b286681d6e2e1 and d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:16:51.214] [global] [info] [git_source_control.cc:519] Resolved divergent commit as d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:16:51.214] [global] [info] [session_context.cc:167] Making commit info with id: d4723ceddb48539e3d752c25cdaf62c15445ecc6
+[2025-11-01 09:16:51.294] [global] [info] [service.cc:439] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::GetChangedFiles(grpc::ServerContext *, const proto::v1::GetChangedFilesRequest *, proto::v1::GetChangedFilesResponse *) status=OK
+[2025-11-01 09:16:51.297] [global] [info] [service.cc:227] [user-agent=lsp-proxy sid=n/a] lint session created sid=32 with the following options:
+cache_enabled: true, num_jobs: 6, session_type: 4, client_id: lsp-proxy, scope: 1
+[2025-11-01 09:16:51.298] [global] [info] [service.cc:145] [user-agent=lsp-proxy sid=n/a] TX:virtual grpc::Status trunk::cli::lint::Service::Start(grpc::ServerContext *, const proto::v1::StartRequest *, grpc::ServerWriter<proto::v1::StartResponse> *) status=OK

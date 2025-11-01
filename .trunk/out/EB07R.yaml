@@ -1,0 +1,41 @@
+trunk_cli_version: 1.25.0
+title: Check [[on-demand] [prettier:format:app\templates\search_results.html:HEAD]]
+report:
+  - linter:
+      command: |
+        'C:/Users/ROEURN.ROS/AppData/Local/trunk/tools/git-bash/2.40.1-da0c3e1526d36e62bf43d06ec46c5052/bin\sh.exe' 'C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/node_modules/.bin\prettier' -w 'app\templates\search_results.html'
+      stdin_path: (none)
+      run_from: C:\Users\ROEURN.ROS\AppData\Local\Temp\trunk\egpwict\iriewsy\
+      timeout: 10m
+      rerun: (cd C:\Users\ROEURN.ROS\AppData\Local\Temp\trunk\egpwict\iriewsy\; env -i HOME= 'NODE_PATH=C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/node_modules' 'COMSPEC=C:\WINDOWS\system32\cmd.exe' 'PATH=C:/Users/ROEURN.ROS/AppData/Local/trunk/tools/git-bash/2.40.1-da0c3e1526d36e62bf43d06ec46c5052/bin;C:/Users/ROEURN.ROS/AppData/Local/trunk/tools/git-bash/2.40.1-da0c3e1526d36e62bf43d06ec46c5052/usr/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/node_modules/.bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\git-bash\2.40.1-da0c3e1526d36e62bf43d06ec46c5052/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\git-bash\2.40.1-da0c3e1526d36e62bf43d06ec46c5052/usr/bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\xampp;C:\xampp\mysql;C:\xampp\php;C:\xampp\php\php.exe;C:\flutter\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\USer\Downloads\platform-tools-latest-windows\platform-tools;C:\Users\ROEURN.ROS\AppData\Local\Microsoft\WindowsApps;C:\Users\ROEURN.ROS\AppData\Local\Programs\Microsoft VS Code\bin;C:\XAMPP\mysql\bin;C:\Users\ROEURN.ROS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts;C:\Users\ROEURN.ROS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts;;c:\Users\ROEURN.ROS\.cache\trunk\launcher' 'C:/Users/ROEURN.ROS/AppData/Local/trunk/tools/git-bash/2.40.1-da0c3e1526d36e62bf43d06ec46c5052/bin\sh.exe' 'C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/node_modules/.bin\prettier' -w 'app\templates\search_results.html')
+      affects_cache:
+        []
+      direct_configs:
+        []
+      exit_status: exited
+      exit_code: 0
+      stdout: |
+        app/templates/search_results.html 62ms
+
+      stderr: (none)
+    parser:
+      command: |
+        'C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070\python3.exe' C:/Users/ROEURN.ROS/AppData/Local/trunk/plugins/https---github-com-trunk-io-plugins/v1.7.3-4ebadccd80b22638/linters/prettier/prettier_to_sarif.py 0
+      stdin_path: (none)
+      run_from: C:\Users\ROEURN.ROS\AppData\Local\Temp\trunk\egpwict\iriewsy\
+      timeout: 10m
+      rerun: (cd C:\Users\ROEURN.ROS\AppData\Local\Temp\trunk\egpwict\iriewsy\; env -i 'Path=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\xampp;C:\xampp\mysql;C:\xampp\php;C:\xampp\php\php.exe;C:\flutter\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\USer\Downloads\platform-tools-latest-windows\platform-tools;C:\Users\ROEURN.ROS\AppData\Local\Microsoft\WindowsApps;C:\Users\ROEURN.ROS\AppData\Local\Programs\Microsoft VS Code\bin;C:\XAMPP\mysql\bin;C:\Users\ROEURN.ROS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts;C:\Users\ROEURN.ROS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts;;c:\Users\ROEURN.ROS\.cache\trunk\launcher' 'NODE_PATH=C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/node_modules' 'COMSPEC=C:\WINDOWS\system32\cmd.exe' PYTHONUTF8=1 'PATH=C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\git-bash\2.40.1-da0c3e1526d36e62bf43d06ec46c5052/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\git-bash\2.40.1-da0c3e1526d36e62bf43d06ec46c5052/usr/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/Scripts;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874/node_modules/.bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\node\22.16.0-12da8a4c27b144aedaf7d975e067667c;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\git-bash\2.40.1-da0c3e1526d36e62bf43d06ec46c5052/bin;C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\git-bash\2.40.1-da0c3e1526d36e62bf43d06ec46c5052/usr/bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\xampp;C:\xampp\mysql;C:\xampp\php;C:\xampp\php\php.exe;C:\flutter\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\USer\Downloads\platform-tools-latest-windows\platform-tools;C:\Users\ROEURN.ROS\AppData\Local\Microsoft\WindowsApps;C:\Users\ROEURN.ROS\AppData\Local\Programs\Microsoft VS Code\bin;C:\XAMPP\mysql\bin;C:\Users\ROEURN.ROS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts;C:\Users\ROEURN.ROS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts;;c:\Users\ROEURN.ROS\.cache\trunk\launcher' 'SYSTEMROOT=C:\WINDOWS' HOME= 'VIRTUAL_ENV=C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\prettier\3.6.2-5f97d52b5ebf101d73ce0489ebcdf874' 'HOMEPATH=\Users\ROEURN.ROS' 'SystemRoot=C:\WINDOWS' 'windir=C:\WINDOWS' 'APPDATA=C:\Users\ROEURN.ROS\AppData\Roaming' 'LOCALAPPDATA=C:\Users\ROEURN.ROS\AppData\Local' 'USERPROFILE=C:\Users\ROEURN.ROS' 'TMP=C:\Users\ROEURN.ROS\AppData\Local\Temp' 'TEMP=C:\Users\ROEURN.ROS\AppData\Local\Temp' 'C:\Users\ROEURN.ROS\AppData\Local\trunk\tools\python\3.10.8-2211cb108575de2785d77a26a1f8d070\python3.exe' C:/Users/ROEURN.ROS/AppData/Local/trunk/plugins/https---github-com-trunk-io-plugins/v1.7.3-4ebadccd80b22638/linters/prettier/prettier_to_sarif.py 0)
+      exit_status: exited
+      exit_code: 0
+      stdout: |
+        {
+          "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+          "version": "2.1.0",
+          "runs": [
+            {
+              "results": []
+            }
+          ]
+        }
+
+      stderr: (none)
