@@ -14,9 +14,6 @@
                         <input type="text" name="search" class="form-control" value="{{ search }}"
                             placeholder="Search products...">
                     </div>
-                    <form method="POST" action="{{ url_for('cart.add_to_cart', product_id=product.id) }}">
-                        <button type="submit" class="btn btn-primary btn-sm w-100">Add to Cart</button>
-                    </form>
                     <div class="mb-3">
                         <label class="form-label">Category</label>
                         <select name="category_id" class="form-select">
@@ -27,6 +24,19 @@
                             </option>
                             {% endfor %}
                         </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Price Range</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="number" name="min_price" class="form-control" placeholder="Min"
+                                    value="{{ min_price }}">
+                            </div>
+                            <div class="col">
+                                <input type="number" name="max_price" class="form-control" placeholder="Max"
+                                    value="{{ max_price }}">
+                            </div>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
                 </form>
@@ -41,8 +51,8 @@
             {% for product in products %}
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="{{ url_for('static', filename=product.image_url) if product.image_url else 'https://via.placeholder.com/300x200?text=No+Image' }}"
-                        alt="{{ product.name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.name }}"
+                        class="card-img-top" style="height: 200px; object-fit: cover;">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p class="card-text text-muted small">
@@ -54,11 +64,23 @@
                             <div class="d-grid gap-2">
                                 <a href="{{ url_for('products.product_detail', product_id=product.id) }}"
                                     class="btn btn-outline-primary btn-sm">View Details</a>
+
                                 {% if current_user.is_authenticated %}
-                                <button class="btn btn-primary btn-sm" disabled>Add to Cart (Coming Soon)</button>
+                                <!-- Add to Wishlist Button -->
+                                <form method="POST"
+                                    action="{{ url_for('wishlist.add_to_wishlist', product_id=product.id) }}">
+                                    <button type="submit" class="btn btn-outline-success btn-sm w-100">
+                                        <i class="fas fa-heart"></i> Add to Wishlist
+                                    </button>
+                                </form>
+
+                                <!-- Add to Cart Button -->
+                                <form method="POST" action="{{ url_for('cart.add_to_cart', product_id=product.id) }}">
+                                    <button type="submit" class="btn btn-primary btn-sm w-100">Add to Cart</button>
+                                </form>
                                 {% else %}
-                                <a href="{{ url_for('auth.login') }}" class="btn btn-outline-secondary btn-sm">
-                                    Login to Purchase
+                                <a href="{{ url_for('auth.login') }}" class="btn btn-outline-secondary btn-sm w-100">
+                                    Login to Add
                                 </a>
                                 {% endif %}
                             </div>

@@ -1,0 +1,205 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="mb-4">Admin Dashboard</h2>
+
+<!-- Statistics Cards -->
+<div class="row">
+    <div class="col-md-3 mb-4">
+        <div class="card text-white bg-primary">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h4>{{ products_count }}</h4>
+                        <p class="mb-0">Total Products</p>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="fas fa-boxes fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card text-white bg-success">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h4>{{ categories_count }}</h4>
+                        <p class="mb-0">Categories</p>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="fas fa-tags fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card text-white bg-warning">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h4>{{ orders_count }}</h4>
+                        <p class="mb-0">Total Orders</p>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="fas fa-shopping-cart fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card text-white bg-info">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h4>{{ users_count }}</h4>
+                        <p class="mb-0">Total Users</p>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="fas fa-users fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- User Statistics Row -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">User Statistics</h5>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-6">
+                        <div class="border-end">
+                            <h3 class="text-primary">{{ active_users_count }}</h3>
+                            <p class="text-muted mb-0">Active Users</p>
+                            <small class="text-muted">Users with orders</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="text-success">{{ recent_users_count }}</h3>
+                        <p class="text-muted mb-0">New Users</p>
+                        <small class="text-muted">Last 7 days</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Recent Activity</h5>
+            </div>
+            <div class="card-body">
+                {% if recent_orders %}
+                <p class="mb-2"><strong>{{ recent_orders|length }} recent orders</strong></p>
+                <p class="text-muted small mb-0">Latest: #{{ recent_orders[0].order_number }}</p>
+                {% else %}
+                <p class="text-muted mb-0">No recent orders</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Users & Orders -->
+<div class="row mb-4">
+    <!-- Recent Users -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Recent Users</h5>
+                <a href="{{ url_for('admin.manage_users') }}" class="btn btn-sm btn-outline-primary">View All</a>
+            </div>
+            <div class="card-body">
+                {% if recent_users %}
+                <div class="list-group list-group-flush">
+                    {% for user in recent_users %}
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>{{ user.username }}</strong>
+                            <br>
+                            <small class="text-muted">{{ user.email }}</small>
+                        </div>
+                        <div class="text-end">
+                            <small class="text-muted">{{ user.created_at.strftime('%Y-%m-%d') }}</small>
+                            <br>
+                            <span class="badge {% if user.orders %}bg-success{% else %}bg-secondary{% endif %}">
+                                {{ user.orders|length }} orders
+                            </span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-muted text-center mb-0">No users found</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Orders -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Recent Orders</h5>
+                <a href="{{ url_for('admin.manage_orders') }}" class="btn btn-sm btn-outline-primary">View All</a>
+            </div>
+            <div class="card-body">
+                {% if recent_orders %}
+                <div class="list-group list-group-flush">
+                    {% for order in recent_orders %}
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>#{{ order.order_number }}</strong>
+                            <br>
+                            <small class="text-muted">{{ order.user.username if order.user else 'Guest' }}</small>
+                        </div>
+                        <div class="text-end">
+                            <small class="text-muted">{{ order.created_at.strftime('%m/%d') }}</small>
+                            <br>
+                            <span class="badge bg-primary">${{ "%.2f"|format(order.total_amount) }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-muted text-center mb-0">No orders found</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Quick Actions</h5>
+                <div class="d-grid gap-2 d-md-flex">
+                    <a href="{{ url_for('admin.manage_products') }}" class="btn btn-primary me-2">
+                        <i class="fas fa-boxes me-2"></i>Manage Products
+                    </a>
+                    <a href="{{ url_for('admin.manage_categories') }}" class="btn btn-success me-2">
+                        <i class="fas fa-tags me-2"></i>Manage Categories
+                    </a>
+                    <a href="{{ url_for('admin.manage_orders') }}" class="btn btn-warning me-2">
+                        <i class="fas fa-shopping-cart me-2"></i>Manage Orders
+                    </a>
+                    <!-- Add this new button -->
+                    <a href="{{ url_for('admin.manage_users') }}" class="btn btn-info">
+                        <i class="fas fa-users me-2"></i>Manage Users
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

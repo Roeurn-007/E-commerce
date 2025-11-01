@@ -7,11 +7,8 @@
 <div class="row">
     {% for product in products %}
     <div class="col-md-3 mb-4">
-        <form method="POST" action="{{ url_for('cart.add_to_cart', product_id=product.id) }}">
-            <button type="submit" class="btn btn-primary btn-sm w-100">Add to Cart</button>
-        </form>
         <div class="card h-100 shadow-sm">
-            <img src="{{ url_for('static', filename=product.image_url) if product.image_url else 'https://via.placeholder.com/300x200?text=No+Image' }}"
+            <img src="{{ product.image_url or 'https://via.placeholder.com/300x200/dee2e6/6c757d?text=Product+Image' }}"
                 class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title">{{ product.name }}</h5>
@@ -24,7 +21,9 @@
                         <a href="{{ url_for('products.product_detail', product_id=product.id) }}"
                             class="btn btn-outline-primary btn-sm">View Details</a>
                         {% if current_user.is_authenticated %}
-                        <button class="btn btn-primary btn-sm w-100" disabled>Add to Cart</button>
+                        <form method="POST" action="{{ url_for('cart.add_to_cart', product_id=product.id) }}">
+                            <button type="submit" class="btn btn-primary btn-sm w-100">Add to Cart</button>
+                        </form>
                         {% endif %}
                     </div>
                 </div>

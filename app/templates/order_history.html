@@ -25,9 +25,9 @@
                         <td>${{ "%.2f"|format(order.total_amount) }}</td>
                         <td>
                             <span class="badge 
-                                {% if order.status == 'completed' %}bg-success
-                                {% elif order.status == 'confirmed' %}bg-primary
-                                {% elif order.status == 'shipped' %}bg-info
+                                {% if order.status == 'completed' or order.status == 'delivered' %}bg-success
+                                {% elif order.status == 'shipped' %}bg-primary
+                                {% elif order.status == 'processing' or order.status == 'confirmed' %}bg-info
                                 {% elif order.status == 'cancelled' %}bg-danger
                                 {% else %}bg-warning{% endif %}">
                                 {{ order.status|title }}
@@ -42,6 +42,7 @@
                             </span>
                         </td>
                         <td>
+                            <!-- FIXED: Changed from button to working link -->
                             <a href="{{ url_for('orders.get_order_details', order_id=order.id) }}"
                                 class="btn btn-sm btn-outline-primary">
                                 View Details

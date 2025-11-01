@@ -18,8 +18,6 @@ class Order(db.Model):
         db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     user = db.relationship("User", backref="orders")
-    items = db.relationship("OrderItem", backref="order",
-                            cascade="all, delete-orphan")
 
     def __repr__(self):
         return f'<Order {self.order_number}>'
@@ -37,6 +35,7 @@ class OrderItem(db.Model):
     unit_price = db.Column(db.Float, nullable=False)
     total_price = db.Column(db.Float, nullable=False)
 
+    order = db.relationship("Order", backref="items")
     product = db.relationship("Product", backref="order_items")
 
     def __repr__(self):

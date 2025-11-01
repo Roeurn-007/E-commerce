@@ -1,0 +1,183 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Order Details</h2>
+        <a href="{{ url_for('admin.manage_orders') }}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+        </a>
+    </div>
+
+    {% if order %}
+    <div class="card">
+        <div class="card-header">
+            <h4 class="mb-0">Order #{{ order.id }} - {{ order.order_number }}</h4>
+        </div>
+
+        <div class="card-body">
+            <!-- Order Information -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h5>Order Information</h5>
+                    <table class="table table-sm">
+                        <tr>
+                            <td><strong>Order Number:</strong></td>
+                            <td>{{ order.order_number }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Order Date:</strong></td>
+                            <td>{{ order.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Status:</strong></td>
+                            <td>
+                                <span class="badge 
+                                    {% if order.status == 'completed' %}bg-success
+                                    {% elif order.status == 'processing' %}bg-primary
+                                    {% elif order.status == 'shipped' %}bg-info
+                                    {% elif order.status == 'cancelled' %}bg-danger
+                                    {% else %}bg-warning{% endif %}">
+                                    {{ order.status|title }}
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Amount:</strong></td>
+                            <td>${{ "%.2f"|format(order.total_amount) }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Payment Status:</strong></td>
+                            <td>
+                                <span
+                                    class="badge {% if order.payment_status == 'paid' %}bg-success{% else %}bg-warning{% endif %}">
+                                    {{ order.payment_status|title }}
+                                </span>
+                            </td>
+                        </tr>
+                        {% if order.payment_method %}
+                        <tr>
+                            <td><strong>Payment Method:</strong></td>
+                            <td>{{ order.payment_method|title }}</td>
+                        </tr>
+                        {% endif %}
+                    </table>
+                </div>
+
+                <div class="col-md-6">
+                    <h5>Customer Information</h5>
+                    <table class="table table-sm">
+                        <tr>
+                            <td><strong>Customer:</strong></td>
+                            <td>{{ order.user.username if order.user else 'Guest' }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email:</strong></td>
+                            <td>{{ order.user.email if order.user else 'N/A' }}</td>
+                        </tr>
+                    </table>
+
+                    <h6>Shipping Address</h6>
+                    <div class="border p-2 bg-light">
+                        {{ order.shipping_address|replace('\n', '<br>')|safe }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Items -->
+            <h5>Order Items ({{ order.items|length }} items)</h5>
+            {% if order.items %}
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="table table-striped">
+                        <tr>
+                            <th>#</th>
+                            <th>Product</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in order.items %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    {% if item.product and item.product.image_url %}
+                                    <img src="{{ url_for('static', filename=item.product.image_url) }}"
+                                        alt="{{ item.product.name }}" class="img-thumbnail me-3"
+                                        style="width: 60px; height: 60px; object-fit: cover;">
+                                    {% else %}
+                                    <div class="img-thumbnail me-3 d-flex align-items-center justify-content-center"
+                                        style="width: 60px; height: 60px; background: #f8f9fa;">
+                                        <i class="fas fa-box text-muted"></i>
+                                    </div>
+                                    {% endif %}
+                                    <div>
+                                        <strong>
+                                            {% if item.product %}
+                                            {{ item.product.name }}
+                                            {% else %}
+                                            Product #{{ item.product_id }}
+                                            {% endif %}
+                                        </strong>
+                                        {% if item.product and item.product.specifications %}
+                                        <br><small class="text-muted">{{ item.product.specifications[:100] }}{% if
+                                            item.product.specifications|length > 100 %}...{% endif %}</small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-nowrap">${{ "%.2f"|format(item.unit_price) }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td class="text-nowrap"><strong>${{ "%.2f"|format(item.total_price) }}</strong></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot class="table-secondary">
+                        <tr>
+                            <td colspan="4" class="text-end"><strong>Grand Total:</strong></td>
+                            <td><strong>${{ "%.2f"|format(order.total_amount) }}</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            {% else %}
+            <div class="alert alert-warning text-center">
+                <i class="fas fa-exclamation-triangle fa-2x mb-3"></i>
+                <h5>No Items Found</h5>
+                <p class="mb-0">This order doesn't contain any items.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Order Actions -->
+    <div class="card mt-4">
+        <div class="card-header">
+            <h5 class="mb-0">Order Actions</h5>
+        </div>
+        <div class="card-body">
+            <div class="d-flex gap-2 flex-wrap">
+                <strong class="align-self-center me-2">Update Status:</strong>
+                <a href="{{ url_for('admin.update_order_status', order_id=order.id, status='processing') }}"
+                    class="btn btn-sm btn-outline-primary">Processing</a>
+                <a href="{{ url_for('admin.update_order_status', order_id=order.id, status='shipped') }}"
+                    class="btn btn-sm btn-outline-info">Shipped</a>
+                <a href="{{ url_for('admin.update_order_status', order_id=order.id, status='completed') }}"
+                    class="btn btn-sm btn-outline-success">Completed</a>
+                <a href="{{ url_for('admin.update_order_status', order_id=order.id, status='cancelled') }}"
+                    class="btn btn-sm btn-outline-danger">Cancel</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="alert alert-danger text-center">
+        <i class="fas fa-times-circle fa-2x mb-3"></i>
+        <h4>Order Not Found</h4>
+        <p>The requested order could not be found.</p>
+        <a href="{{ url_for('admin.manage_orders') }}" class="btn btn-primary">Back to Orders</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

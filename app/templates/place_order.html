@@ -13,8 +13,7 @@
                     <div class="mb-3">
                         <label for="shipping_address" class="form-label">Shipping Address</label>
                         <textarea name="shipping_address" id="shipping_address" class="form-control" rows="4"
-                            placeholder="Enter your complete shipping address including street, city, state, and zip code..."
-                            required></textarea>
+                            placeholder="Enter your complete shipping address..." required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="payment_method" class="form-label">Payment Method</label>
@@ -26,7 +25,6 @@
                         </select>
                     </div>
                     <button type="submit" class="btn btn-success btn-lg">Place Order</button>
-                    <a href="{{ url_for('cart.get_cart') }}" class="btn btn-secondary btn-lg ms-2">Back to Cart</a>
                 </form>
             </div>
         </div>
@@ -45,22 +43,9 @@
                 </div>
                 {% endfor %}
                 <hr>
-                <div class="d-flex justify-content-between mb-2">
-                    <span>Subtotal:</span>
-                    <span>${{ "%.2f"|format(total) }}</span>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                    <span>Shipping:</span>
-                    <span>$0.00</span>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                    <span>Tax (10%):</span>
-                    <span>${{ "%.2f"|format(total * 0.1) }}</span>
-                </div>
-                <hr>
                 <div class="d-flex justify-content-between">
                     <strong>Total:</strong>
-                    <strong>${{ "%.2f"|format(total * 1.1) }}</strong>
+                    <strong>${{ "%.2f"|format(total) }}</strong>
                 </div>
             </div>
         </div>

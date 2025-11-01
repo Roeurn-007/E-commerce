@@ -92,9 +92,13 @@ def init_database():
         print("✅ Database initialized with sample data!")
         print("👤 Admin login: admin@electronics.com / admin123")
         print("👤 User login: john@example.com / password123")
-        print("📱 Products and categories added!")
         print("🚀 Run: python run.py to start the application")
 
 
 if __name__ == "__main__":
     init_database()
+
+app = create_app()
+
+with app.app_context():
+    db.create_all()
