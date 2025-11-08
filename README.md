@@ -63,6 +63,10 @@ A modern, full-featured e-commerce platform built with Flask for selling electro
     ```bash
     python init_db.py
     ```
+5. **Run Application**
+    ```bash
+    python run.py
+    ```
 
 ## 👤 Default Accounts
 
