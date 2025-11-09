@@ -1,4 +1,4 @@
-# MoneTech - Electronics E-Commerce Platform
+# TechHub - Electronics E-Commerce Platform
 
 ![MoneTech](https://img.shields.io/badge/MoneTech-Electronics%20Store-blue)
 ![Flask](https://img.shields.io/badge/Flask-2.3.3-green)
