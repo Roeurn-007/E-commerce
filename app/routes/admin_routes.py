@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, flash, request
+from flask import Blueprint, render_template, redirect, url_for, flash, request, current_app
 from flask_login import login_required, current_user
 from app.models.product import Product
 from app.models.category import Category
@@ -7,6 +7,8 @@ from app.models.user import User
 from app import db
 from sqlalchemy.orm import joinedload
 from datetime import datetime, timedelta
+import os
+from werkzeug.utils import secure_filename
 
 admin_bp = Blueprint('admin', __name__)
 
@@ -21,6 +23,12 @@ def admin_required(func):
             return redirect(url_for('auth.login'))
         return func(*args, **kwargs)
     return decorated_view
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in {
+               'png', 'jpg', 'jpeg', 'gif', 'webp'}
 
 # Dashboard
 
@@ -126,14 +134,50 @@ def manage_products():
 def add_product():
     if request.method == 'POST':
         try:
+            image_path = 'images/main_product.png'  # Default image
+
+            # Handle file upload
+            if 'image' in request.files:
+                file = request.files['image']
+                print(f"DEBUG: File received - {file.filename}")  # DEBUG
+
+                if file and file.filename and allowed_file(file.filename):
+                    filename = secure_filename(file.filename)
+                    # Add timestamp to make filename unique
+                    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_")
+                    filename = timestamp + filename
+
+                    # FIXED: Use absolute path
+                    upload_dir = os.path.join(
+                        current_app.root_path, 'static', 'uploads')
+                    print(f"DEBUG: Upload directory - {upload_dir}")  # DEBUG
+
+                    # Ensure directory exists
+                    os.makedirs(upload_dir, exist_ok=True)
+
+                    filepath = os.path.join(upload_dir, filename)
+                    print(f"DEBUG: Full file path - {filepath}")  # DEBUG
+
+                    # Save the file
+                    file.save(filepath)
+
+                    # Check if file was actually saved
+                    if os.path.exists(filepath):
+                        # DEBUG
+                        print(f"DEBUG: File saved successfully - {filepath}")
+                        image_path = f"uploads/{filename}"
+                    else:
+                        print(f"DEBUG: File save failed!")  # DEBUG
+                else:
+                    print(f"DEBUG: Invalid file or file type")  # DEBUG
+
             product = Product(
                 name=request.form.get('name'),
                 description=request.form.get('description'),
                 price=float(request.form.get('price')),
                 stock_quantity=int(request.form.get('stock_quantity')),
                 category_id=int(request.form.get('category_id')),
-                image_url=request.form.get(
-                    'image_url') or 'images/main_product.png',
+                image_url=image_path,
                 specifications=request.form.get('specifications', '')
             )
 
@@ -143,10 +187,13 @@ def add_product():
             return redirect(url_for('admin.manage_products'))
         except Exception as e:
             db.session.rollback()
+            print(f"DEBUG: Error - {str(e)}")  # DEBUG
             flash(f'Error adding product: {str(e)}', 'danger')
 
     categories = Category.query.all()
     return render_template('admin/add_product.html', categories=categories)
+
+# FIXED: Update the edit_product route
 
 
 @admin_bp.route('/admin/products/edit/<int:product_id>', methods=['GET', 'POST'])
@@ -157,13 +204,29 @@ def edit_product(product_id):
 
     if request.method == 'POST':
         try:
+            # Handle file upload
+            if 'image' in request.files:
+                file = request.files['image']
+                if file and file.filename and allowed_file(file.filename):
+                    filename = secure_filename(file.filename)
+                    # Add timestamp to make filename unique
+                    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_")
+                    filename = timestamp + filename
+
+                    # FIXED: Use correct path construction
+                    upload_dir = os.path.join(
+                        current_app.root_path, 'static', 'uploads')
+                    # Ensure directory exists
+                    os.makedirs(upload_dir, exist_ok=True)
+                    filepath = os.path.join(upload_dir, filename)
+                    file.save(filepath)
+                    product.image_url = f"uploads/{filename}"
+
             product.name = request.form.get('name')
             product.description = request.form.get('description')
             product.price = float(request.form.get('price'))
             product.stock_quantity = int(request.form.get('stock_quantity'))
             product.category_id = int(request.form.get('category_id'))
-            product.image_url = request.form.get(
-                'image_url') or 'images/main_product.png'
             product.specifications = request.form.get('specifications', '')
 
             db.session.commit()

@@ -1,7 +1,6 @@
 from app import db
 from datetime import datetime
 
-
 class Product(db.Model):
     __tablename__ = "products"
 
@@ -15,8 +14,7 @@ class Product(db.Model):
     is_active = db.Column(db.Boolean, default=True)
     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    updated_at = db.Column(
-        db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     category = db.relationship("Category", backref="products")
 

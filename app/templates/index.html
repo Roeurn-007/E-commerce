@@ -1,84 +1,231 @@
-{% extends "layout.html" %}
-{% block content %}
-<!-- Hero Section -->
-<section class="hero-section bg-primary text-white py-5 mb-5 rounded">
-    <div class="container pd-4">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h1 class="display-4 fw-bold">Welcome to TechHub</h1>
-                <p class="lead">Discover the latest electronics and gadgets at amazing prices</p>
-                <a href="{{ url_for('products.get_products') }}" class="btn btn-light btn-lg">Shop Now</a>
-            </div>
-            <div class="col-lg-6">
-                <img src="../static/images/main_product.png" alt="" style="width: 70%;">
-            </div>
-        </div>
+{% extends "layout.html" %} {% block content %}
+<!-- Enhanced Hero Section with Coolor-style Design -->
+<section
+  class="hero-section py-5 mb-5 rounded"
+  style="
+    background: linear-gradient(
+      135deg,
+      #667eea 0%,
+      #764ba2 25%,
+      #570ebe 50%,
+      #178fd4 75%,
+      #4facfe 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+    position: relative;
+    overflow: hidden;
+  "
+>
+  <!-- Added geometric shapes for modern look -->
+  <div
+    class="position-absolute top-0 end-0"
+    style="width: 300px; height: 300px"
+  >
+    <div
+      style="
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        animation: morph 15s linear infinite;
+      "
+    ></div>
+  </div>
+  <div
+    class="position-absolute bottom-0 start-0"
+    style="width: 200px; height: 200px"
+  >
+    <div
+      style="
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 53% 47% 43% 57% / 51% 39% 61% 49%;
+        animation: morph 12s linear infinite reverse;
+      "
+    ></div>
+  </div>
+
+  <div class="container pd-4 position-relative" style="z-index: 2">
+    <div class="row align-items-center">
+      <div class="col-lg-6" style="padding: 24px">
+        <h1
+          class="display-4 fw-bold text-white mb-4"
+          style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2)"
+        >
+          Welcome to TechHub
+        </h1>
+        <p
+          class="lead text-white mb-4"
+          style="font-size: 1.25rem; font-weight: 300"
+        >
+          Discover the latest electronics and gadgets at amazing prices
+        </p>
+        <a
+          href="{{ url_for('products.get_products') }}"
+          class="btn btn-light btn-lg px-4 py-2 fw-bold"
+          style="
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+          "
+          onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)';"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)';"
+          >Shop Now</a
+        >
+      </div>
+      <div class="col-lg-6 text-center">
+        <img
+          src="../static/images/main_product.png"
+          alt="Featured Product"
+          class="hero-product-img"
+          style="
+            width: 70%;
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3));
+            animation: float 6s ease-in-out infinite;
+          "
+        />
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- Featured Products -->
 <section class="featured-products mb-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Featured Products</h2>
-        <div class="row">
-            {% for product in products %}
-            <div class="col-md-3 mb-4">
-                <div class="card h-100 shadow-sm product-card">
-                    <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.name }}"
-                        class="card-img-top" style="height: 200px; object-fit: contain; padding: 10px;">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text text-muted small flex-grow-1">
-                            {{ product.description[:80] }}{% if product.description|length > 80 %}...{% endif %}
-                        </p>
-                        <div class="mt-auto">
-                            <p class="fw-bold text-primary h5">${{ "%.2f"|format(product.price) }}</p>
-                            <div class="d-grid gap-2">
-                                <a href="{{ url_for('products.product_detail', product_id=product.id) }}"
-                                    class="btn btn-outline-primary btn-sm">View Details</a>
-                                {% if current_user.is_authenticated %}
-                                <form method="POST" action="{{ url_for('cart.add_to_cart', product_id=product.id) }}">
-                                    <button type="submit" class="btn btn-primary btn-sm w-100">Add to Cart</button>
-                                </form>
-                                {% else %}
-                                <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-sm">Login to Buy</a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="container">
+    <h2 class="text-center mb-4">Featured Products</h2>
+    <div class="row">
+      {% for product in products %}
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 shadow-sm product-card">
+          <img
+            src="{{ url_for('static', filename=product.image_url) }}"
+            alt="{{ product.name }}"
+            class="card-img-top"
+            style="height: 200px; object-fit: contain; padding: 10px"
+          />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text text-muted small flex-grow-1">
+              {{ product.description[:80] }}{% if product.description|length >
+              80 %}...{% endif %}
+            </p>
+            <div class="mt-auto">
+              <p class="fw-bold text-primary h5">
+                ${{ "%.2f"|format(product.price) }}
+              </p>
+              <div class="d-grid gap-2">
+                <a
+                  href="{{ url_for('products.product_detail', product_id=product.id) }}"
+                  class="btn btn-outline-primary btn-sm"
+                  >View Details</a
+                >
+                {% if current_user.is_authenticated %}
+                <form
+                  method="POST"
+                  action="{{ url_for('cart.add_to_cart', product_id=product.id) }}"
+                >
+                  <button type="submit" class="btn btn-primary btn-sm w-100">
+                    Add to Cart
+                  </button>
+                </form>
+                {% else %}
+                <a
+                  href="{{ url_for('auth.login') }}"
+                  class="btn btn-primary btn-sm"
+                  >Login to Buy</a
+                >
+                {% endif %}
+              </div>
             </div>
-            {% endfor %}
+          </div>
         </div>
+      </div>
+      {% endfor %}
     </div>
+  </div>
 </section>
 
 <!-- Features Section -->
 <section class="features bg-light py-5">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="feature-item">
-                    <i class="fas fa-shipping-fast fa-3x text-primary mb-3"></i>
-                    <h4>Free Shipping</h4>
-                    <p class="text-muted">Free shipping on orders over $50</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-item">
-                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
-                    <h4>Secure Payment</h4>
-                    <p class="text-muted">Your payment information is safe with us</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-item">
-                    <i class="fas fa-undo-alt fa-3x text-primary mb-3"></i>
-                    <h4>30-Day Returns</h4>
-                    <p class="text-muted">Hassle-free 30-day return policy</p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="feature-item">
+          <i class="fas fa-shipping-fast fa-3x text-primary mb-3"></i>
+          <h4>Free Shipping</h4>
+          <p class="text-muted">Free shipping on orders over $50</p>
         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-item">
+          <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+          <h4>Secure Payment</h4>
+          <p class="text-muted">Your payment information is safe with us</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-item">
+          <i class="fas fa-undo-alt fa-3x text-primary mb-3"></i>
+          <h4>30-Day Returns</h4>
+          <p class="text-muted">Hassle-free 30-day return policy</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
+
+<style>
+  /* Enhanced gradient animation for hero section */
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Morphing shapes animation */
+  @keyframes morph {
+    0% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    100% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+  }
+
+  /* Floating animation for product image */
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  /* Enhanced product card hover effects */
+  .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 12px;
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+  }
+</style>
 {% endblock %}

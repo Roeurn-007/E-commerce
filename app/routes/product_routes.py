@@ -6,12 +6,10 @@ from sqlalchemy import or_
 
 product_bp = Blueprint("products", __name__)
 
-
 @product_bp.route("/")
 def home():
     featured_products = Product.query.filter_by(is_active=True).limit(8).all()
     return render_template('index.html', products=featured_products)
-
 
 @product_bp.route("/products")
 def get_products():
@@ -19,9 +17,9 @@ def get_products():
     search = request.args.get('search', '')
     min_price = request.args.get('min_price', type=float)
     max_price = request.args.get('max_price', type=float)
-
+    
     query = Product.query.filter_by(is_active=True)
-
+    
     if category_id:
         query = query.filter_by(category_id=category_id)
     if search:
@@ -33,13 +31,12 @@ def get_products():
         query = query.filter(Product.price >= min_price)
     if max_price is not None:
         query = query.filter(Product.price <= max_price)
-
+    
     products = query.all()
     categories = Category.query.all()
-
-    return render_template('product_list.html', products=products, categories=categories,
-                           search=search, category_id=category_id)
-
+    
+    return render_template('product_list.html', products=products, categories=categories, 
+                         search=search, category_id=category_id)
 
 @product_bp.route("/products/<int:product_id>")
 def product_detail(product_id):
@@ -50,7 +47,6 @@ def product_detail(product_id):
         Product.is_active == True
     ).limit(4).all()
     return render_template('product_detail.html', product=product, related_products=related_products)
-
 
 @product_bp.route("/products/search")
 def search_products():
@@ -64,5 +60,5 @@ def search_products():
         ).filter_by(is_active=True).all()
     else:
         products = []
-
+    
     return render_template('search_results.html', products=products, query=query)

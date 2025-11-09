@@ -1,92 +1,112 @@
-{% extends "layout.html" %}
-{% block content %}
-<h3 class="mb-4">Manage Orders</h3>
+{% extends "layout.html" %} {% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h3 class="mb-4">Manage Orders</h3>
+  <a href="{{ url_for('admin.dashboard') }}" class="btn btn-secondary">
+    <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+  </a>
+</div>
 
 <div class="card">
-    <div class="card-header">
-        <h5 class="mb-0">All Orders</h5>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Date</th>
-                        <th>Total Amount</th>
-                        <th>Status</th>
-                        <th>Items</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for order in orders %}
-                    <tr>
-                        <td>#{{ order.id }}</td>
-                        <td>{{ order.user.username if order.user else 'Guest' }}</td>
-                        <td>{{ order.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
-                        <td>${{ "%.2f"|format(order.total_amount) }}</td>
-                        <td>
-                            <span class="badge 
-                                {% if order.status == 'completed' %}bg-success
-                                {% elif order.status == 'processing' %}bg-primary
-                                {% elif order.status == 'shipped' %}bg-info
-                                {% elif order.status == 'cancelled' %}bg-danger
-                                {% else %}bg-secondary{% endif %}">
-                                {{ order.status|title }}
-                            </span>
-                        </td>
-                        <td>
-                            <!-- FIXED: Properly display order items -->
-                            {% for item in order.items %}
-                            {{ item.quantity }}x
-                            {% if item.product %}
-                            {{ item.product.name }}
-                            {% else %}
-                            Product #{{ item.product_id }}
-                            {% endif %}
-                            <br>
-                            {% else %}
-                            No items
-                            {% endfor %}
-                        </td>
-                        <td>
-                            <a href="{{ url_for('admin.view_order', order_id=order.id) }}"
-                                class="btn btn-sm btn-outline-primary me-1">
-                                <i class="fas fa-eye"></i> View
-                            </a>
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h5 class="mb-0">All Orders</h5>
+    <a href="{{ url_for('files.download_orders') }}" class="btn btn-success">
+      <i class="fas fa-download me-2"></i>Export Orders
+    </a>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Date</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+            <th>Items</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in orders %}
+          <tr>
+            <td>#{{ order.id }}</td>
+            <td>{{ order.user.username if order.user else 'Guest' }}</td>
+            <td>{{ order.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+            <td>${{ "%.2f"|format(order.total_amount) }}</td>
+            <td>
+              <span
+                class="badge {% if order.status == 'completed' %}bg-success {% elif order.status == 'processing' %}bg-primary {% elif order.status == 'shipped' %}bg-info {% elif order.status == 'cancelled' %}bg-danger {% else %}bg-secondary{% endif %}"
+              >
+                {{ order.status|title }}
+              </span>
+            </td>
+            <td>
+              <!-- FIXED: Properly display order items -->
+              {% for item in order.items %} {{ item.quantity }}x {% if
+              item.product %} {{ item.product.name }} {% else %} Product #{{
+              item.product_id }} {% endif %}
+              <br />
+              {% else %} No items {% endfor %}
+            </td>
+            <td>
+              <a
+                href="{{ url_for('admin.view_order', order_id=order.id) }}"
+                class="btn btn-sm btn-outline-primary me-1"
+              >
+                <i class="fas fa-eye"></i> View
+              </a>
 
-                            <div class="dropdown d-inline">
-                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
-                                    data-bs-toggle="dropdown">
-                                    Status
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item"
-                                            href="{{ url_for('admin.update_order_status', order_id=order.id, status='processing') }}">Processing</a>
-                                    </li>
-                                    <li><a class="dropdown-item"
-                                            href="{{ url_for('admin.update_order_status', order_id=order.id, status='shipped') }}">Shipped</a>
-                                    </li>
-                                    <li><a class="dropdown-item"
-                                            href="{{ url_for('admin.update_order_status', order_id=order.id, status='completed') }}">Completed</a>
-                                    </li>
-                                    <li><a class="dropdown-item"
-                                            href="{{ url_for('admin.update_order_status', order_id=order.id, status='cancelled') }}">Cancelled</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    {% else %}
-                    <tr>
-                        <td colspan="7" class="text-center text-muted">No orders found.</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+              <div class="dropdown d-inline">
+                <button
+                  class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('admin.update_order_status', order_id=order.id, status='processing') }}"
+                      >Processing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('admin.update_order_status', order_id=order.id, status='shipped') }}"
+                      >Shipped</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('admin.update_order_status', order_id=order.id, status='completed') }}"
+                      >Completed</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('admin.update_order_status', order_id=order.id, status='cancelled') }}"
+                      >Cancelled</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="7" class="text-center text-muted">No orders found.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>
 {% endblock %}

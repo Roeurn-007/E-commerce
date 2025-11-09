@@ -1,98 +1,129 @@
-{% extends "layout.html" %}
-{% block content %}
-<h3 class="mb-4">Manage Categories</h3>
+{% extends "layout.html" %} {% block content %}
 
-{% with messages = get_flashed_messages(with_categories=true) %}
-{% if messages %}
-{% for category, message in messages %}
-<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-    {{ message }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h3 class="mb-4">Manage Categories</h3>
+  <a href="{{ url_for('admin.dashboard') }}" class="btn btn-secondary">
+    <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+  </a>
 </div>
-{% endfor %}
-{% endif %}
-{% endwith %}
+
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages
+%} {% for category, message in messages %}
+<div
+  class="alert alert-{{ category }} alert-dismissible fade show"
+  role="alert"
+>
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+{% endfor %} {% endif %} {% endwith %}
 
 <div class="row">
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">{% if editing_category %}Edit{% else %}Add{% endif %} Category</h5>
-            </div>
-            <div class="card-body">
-                <form method="POST"
-                    action="{% if editing_category %}{{ url_for('admin.update_category', category_id=editing_category.id) }}{% else %}{{ url_for('admin.add_category') }}{% endif %}">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Category Name</label>
-                        <input type="text" class="form-control" id="name" name="name"
-                            value="{% if editing_category %}{{ editing_category.name }}{% endif %}" required>
-                    </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">
+          {% if editing_category %}Edit{% else %}Add{% endif %} Category
+        </h5>
+      </div>
+      <div class="card-body">
+        <form
+          method="POST"
+          action="{% if editing_category %}{{ url_for('admin.update_category', category_id=editing_category.id) }}{% else %}{{ url_for('admin.add_category') }}{% endif %}"
+        >
+          <div class="mb-3">
+            <label for="name" class="form-label">Category Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              value="{% if editing_category %}{{ editing_category.name }}{% endif %}"
+              required
+            />
+          </div>
 
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Description</label>
-                        <textarea class="form-control" id="description" name="description"
-                            rows="3">{% if editing_category %}{{ editing_category.description }}{% endif %}</textarea>
-                    </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              name="description"
+              rows="3"
+            >
+{% if editing_category %}{{ editing_category.description }}{% endif %}</textarea
+            >
+          </div>
 
-                    <div class="d-flex gap-2">
-                        <button type="submit" class="btn btn-primary">
-                            {% if editing_category %}Update{% else %}Add{% endif %} Category
-                        </button>
-                        {% if editing_category %}
-                        <a href="{{ url_for('admin.manage_categories') }}" class="btn btn-secondary">Cancel</a>
-                        {% endif %}
-                    </div>
-                </form>
-            </div>
-        </div>
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">
+              {% if editing_category %}Update{% else %}Add{% endif %} Category
+            </button>
+            {% if editing_category %}
+            <a
+              href="{{ url_for('admin.manage_categories') }}"
+              class="btn btn-secondary"
+              >Cancel</a
+            >
+            {% endif %}
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">All Categories</h5>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Product Count</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for category in categories %}
-                            <tr>
-                                <td>{{ category.id }}</td>
-                                <td>{{ category.name }}</td>
-                                <td>{{ category.description }}</td>
-                                <td>{{ category.products|length if category.products else 0 }}</td>
-                                <td>
-                                    <a href="{{ url_for('admin.edit_category', category_id=category.id) }}"
-                                        class="btn btn-sm btn-outline-primary me-1">
-                                        <i class="fas fa-edit"></i> Edit
-                                    </a>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">All Categories</h5>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Product Count</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for category in categories %}
+              <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>{{ category.description }}</td>
+                <td>
+                  {{ category.products|length if category.products else 0 }}
+                </td>
+                <td>
+                  <a
+                    href="{{ url_for('admin.edit_category', category_id=category.id) }}"
+                    class="btn btn-sm btn-outline-primary me-1"
+                  >
+                    <i class="fas fa-edit"></i> Edit
+                  </a>
 
-                                    <form method="POST"
-                                        action="{{ url_for('admin.delete_category', category_id=category.id) }}"
-                                        class="d-inline"
-                                        onsubmit="return confirm('Are you sure you want to delete {{ category.name }}? This will remove all products in this category.');">
-                                        <button type="submit" class="btn btn-sm btn-outline-danger">
-                                            <i class="fas fa-trash"></i> Delete
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                  <form
+                    method="POST"
+                    action="{{ url_for('admin.delete_category', category_id=category.id) }}"
+                    class="d-inline"
+                    onsubmit="return confirm('Are you sure you want to delete {{ category.name }}? This will remove all products in this category.');"
+                  >
+                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                      <i class="fas fa-trash"></i> Delete
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 {% endblock %}

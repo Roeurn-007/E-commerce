@@ -1,7 +1,6 @@
 from app import db
 from datetime import datetime
 
-
 class Order(db.Model):
     __tablename__ = "orders"
 
@@ -14,23 +13,19 @@ class Order(db.Model):
     payment_method = db.Column(db.String(50))
     payment_status = db.Column(db.String(20), default="pending")
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    updated_at = db.Column(
-        db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     user = db.relationship("User", backref="orders")
 
     def __repr__(self):
         return f'<Order {self.order_number}>'
 
-
 class OrderItem(db.Model):
     __tablename__ = "order_items"
 
     id = db.Column(db.Integer, primary_key=True)
-    order_id = db.Column(db.Integer, db.ForeignKey(
-        "orders.id"), nullable=False)
-    product_id = db.Column(db.Integer, db.ForeignKey(
-        "products.id"), nullable=False)
+    order_id = db.Column(db.Integer, db.ForeignKey("orders.id"), nullable=False)
+    product_id = db.Column(db.Integer, db.ForeignKey("products.id"), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
     unit_price = db.Column(db.Float, nullable=False)
     total_price = db.Column(db.Float, nullable=False)
